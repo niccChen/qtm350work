@@ -1,0 +1,50 @@
+  125  mkdir reports
+  126  touch reports/summary.md
+  127  touch reports/summary.md
+  128  echo "This document provides a summary of the project updates." > reports/summary.md
+  129  git add reports
+  130  git commit -m "Add reports directory"
+  131  touch reports/file{1..3}.txt
+  132  mv data/raw-data.csv data/input-data.csv
+  133  mkdir scripts/backup && cp scripts/*.py scripts/backup/
+  134  rm docs/documentation.md
+  135  git add .
+  136  git commit -m "Update project files"
+  137  touch .gitignore
+  138  echo -e "temp/\ndataset0?.csv" > .gitignore
+  139  cat .gitignore
+  140  git add .gitignore && git commit -m "Add .gitignore file"
+  141  git checkout main
+  142  git merge feature-update
+  143  history | tail -n 50 >> commands.txt
+  144  git add commands.txt
+  145  git commit -m "Update commands.txt with all commands used so far"
+  146  git push origin main
+  147  git push origin main 
+  148  git push origin main 
+  149  ls -al ~/.ssh
+  150  git push origin main
+  151  git status
+  152  10. git commit -m "Add reports directory"
+  153  git clone https://github.com/niccChen/qtm350-quiz01.git
+  154  cd qtm350-quiz01
+  155  touch commands.txt
+  156  git checkout -b feature-update
+  157  mkdir reports
+  158  touch reports/summary.md
+  159  echo "This document provides a summary of the project updates." > reports/summary.md
+  160  git add reports
+  161  git commit -m "Add reports directory"
+  162  touch reports/file{1..3}.txt
+  163  mv data/raw-data.csv data/input-data.csv
+  164  mkdir scripts/backup && cp scripts/*.py scripts/backup/
+  165  rm docs/documentation.md
+  166  git add .
+  167  git commit -m "Update project files"
+  168  touch .gitignore
+  169  echo -e "temp/\ndataset0?.csv" > .gitignore
+  170  cat .gitignore
+  171  git add .gitignore && git commit -m "Add .gitignore file"
+  172  git checkout main
+  173  git merge feature-update
+  174  history | tail -n 50 >> commands.txt
