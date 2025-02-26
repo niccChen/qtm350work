@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Gapminder Analysis",
     "section": "",
-    "text": "The Gapminder dataset provides insights into global development trends, including life expectancy, GDP per capita, and population over time.\n\n\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\n\n\n\nThis interactive map visualizes how life expectancy changes over time across different countries.\nimport pandas as pd import plotly.express as px\ndf = pd.read_csv(“gapminder.csv”)"
+    "text": "The Gapminder dataset provides insights into global development trends, including life expectancy, GDP per capita, and population over time.\n\n\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\n\n\n\nThis interactive map visualizes how life expectancy changes over time across different countries."
   },
   {
     "objectID": "index.html#explore-the-data",
@@ -25,14 +25,7 @@
     "href": "index.html#global-life-expectancy-map",
     "title": "Gapminder Analysis",
     "section": "",
-    "text": "This interactive map visualizes how life expectancy changes over time across different countries.\nimport pandas as pd import plotly.express as px\ndf = pd.read_csv(“gapminder.csv”)"
-  },
-  {
-    "objectID": "country.html",
-    "href": "country.html",
-    "title": "Country Analysis",
-    "section": "",
-    "text": "Country-Specific Trends\ncountry = “India” # Change this to any country of interest\ncountry_data = df[df[“country”] == country]\nplt.figure(figsize=(10,6)) plt.plot(country_data[“year”], country_data[“life_expectancy”], label=“Life Expectancy”, marker=“o”) plt.plot(country_data[“year”], country_data[“gdp_per_capita”], label=“GDP per Capita”, marker=“s”) plt.plot(country_data[“year”], country_data[“population_millions”], label=“Population (Millions)”, marker=“^”) plt.xlabel(“Year”) plt.legend() plt.title(f”Trends in {country}“) plt.show()"
+    "text": "This interactive map visualizes how life expectancy changes over time across different countries."
   },
   {
     "objectID": "qtm350-quiz02.html",
@@ -53,6 +46,6 @@
     "href": "life-gdp.html",
     "title": "Life Expectancy & GDP Per Capita",
     "section": "",
-    "text": "Life Expectancy and GDP per Capita\nThis page explores the relationship between life expectancy and GDP per capita.\nimport pandas as pd import matplotlib.pyplot as plt\n\n\nLoad dataset\ndf = pd.read_csv(“gapminder.csv”)\n\n\nPlot\nplt.figure(figsize=(10,6)) for year in df.year.unique(): subset = df[df.year == year] plt.scatter(subset[‘gdp_per_capita’], subset[‘life_expectancy’], label=year, alpha=0.5) plt.xscale(‘log’) plt.xlabel(“GDP per Capita (Log Scale)”) plt.ylabel(“Life Expectancy”) plt.title(“Life Expectancy vs GDP per Capita Over Time”) plt.legend() plt.show()"
+    "text": "This page explores the relationship between life expectancy and GDP per capita."
   }
 ]

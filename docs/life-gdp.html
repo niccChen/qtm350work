@@ -138,21 +138,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="life-expectancy-and-gdp-per-capita" class="level1">
-<h1>Life Expectancy and GDP per Capita</h1>
 <p>This page explores the relationship between life expectancy and GDP per capita.</p>
-<p>import pandas as pd import matplotlib.pyplot as plt</p>
-</section>
-<section id="load-dataset" class="level1">
-<h1>Load dataset</h1>
-<p>df = pd.read_csv(“gapminder.csv”)</p>
-</section>
-<section id="plot" class="level1">
-<h1>Plot</h1>
-<p>plt.figure(figsize=(10,6)) for year in df.year.unique(): subset = df[df.year == year] plt.scatter(subset[‘gdp_per_capita’], subset[‘life_expectancy’], label=year, alpha=0.5) plt.xscale(‘log’) plt.xlabel(“GDP per Capita (Log Scale)”) plt.ylabel(“Life Expectancy”) plt.title(“Life Expectancy vs GDP per Capita Over Time”) plt.legend() plt.show()</p>
+<div id="961b1cba" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="life-gdp_files/figure-html/cell-2-output-1.png" width="659" height="451" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

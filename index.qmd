@@ -1,5 +1,9 @@
 ---
 title: "Gapminder Analysis"
+execute:
+  echo: false  # Hide code output
+  warning: false  # Hide warnings
+  message: false  # Hide messages
 ---
 
 # Welcome to Gapminder Analysis
@@ -31,3 +35,4 @@ fig = px.choropleth(df,
                      title="Global Life Expectancy Over Time")
 
 fig.show()
+```
