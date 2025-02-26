@@ -1,9 +1,5 @@
 ---
 title: "Life Expectancy & Population"
-execute:
-  echo: false  # Hide code output
-  warning: false  # Hide warnings
-  message: false  # Hide messages
 ---
 
 ```{python}

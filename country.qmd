@@ -1,9 +1,6 @@
 ---
 title: "Country Analysis"
-execute:
-  echo: false  # Hide code output
-  warning: false  # Hide warnings
-  message: false  # Hide messages
+
 ---
 
 ```{python}

@@ -1,9 +1,6 @@
 ---
 title: "Life Expectancy & GDP Per Capita"
-execute:
-  echo: false  # Hide code output
-  warning: false  # Hide warnings
-  message: false  # Hide messages
+
 ---
 
 This page explores the relationship between life expectancy and GDP per capita.
