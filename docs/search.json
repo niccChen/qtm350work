@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Gapminder Analysis",
     "section": "",
-    "text": "The Gapminder dataset provides insights into global development trends, including life expectancy, GDP per capita, and population over time.\n\n\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\n\n\n\nThis interactive map visualizes how life expectancy changes over time across different countries."
+    "text": "The Gapminder dataset provides insights into global development trends, including life expectancy, GDP per capita, and population over time.\n\n\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\n\n\n\nThis interactive map visualizes how life expectancy changes over time across different countries.\n\nimport pandas as pd\nimport plotly.express as px\n\ndf = pd.read_csv(\"gapminder.csv\")\n\n# Create an interactive choropleth map\nfig = px.choropleth(df,\n                     locations=\"country\",\n                     locationmode=\"country names\",\n                     color=\"life_expectancy\",\n                     hover_name=\"country\",\n                     animation_frame=\"year\",\n                     color_continuous_scale=\"Viridis\",\n                     title=\"Global Life Expectancy Over Time\")\n\nfig.show()"
   },
   {
     "objectID": "index.html#explore-the-data",
@@ -25,7 +25,7 @@
     "href": "index.html#global-life-expectancy-map",
     "title": "Gapminder Analysis",
     "section": "",
-    "text": "This interactive map visualizes how life expectancy changes over time across different countries."
+    "text": "This interactive map visualizes how life expectancy changes over time across different countries.\n\nimport pandas as pd\nimport plotly.express as px\n\ndf = pd.read_csv(\"gapminder.csv\")\n\n# Create an interactive choropleth map\nfig = px.choropleth(df,\n                     locations=\"country\",\n                     locationmode=\"country names\",\n                     color=\"life_expectancy\",\n                     hover_name=\"country\",\n                     animation_frame=\"year\",\n                     color_continuous_scale=\"Viridis\",\n                     title=\"Global Life Expectancy Over Time\")\n\nfig.show()"
   },
   {
     "objectID": "country.html",
