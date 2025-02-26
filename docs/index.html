@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -140,11 +141,25 @@ ul.task-list li input[type="checkbox"] {
 <section id="welcome-to-gapminder-analysis" class="level1">
 <h1>Welcome to Gapminder Analysis</h1>
 <p>The Gapminder dataset provides insights into global development trends, including life expectancy, GDP per capita, and population over time.</p>
+<section id="explore-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="explore-the-data"><strong>Explore the Data</strong></h2>
 <ul>
 <li><a href="./life-gdp.html">Life Expectancy and GDP per Capita</a></li>
 <li><a href="./life-population.html">Life Expectancy and Population</a></li>
 <li><a href="./country.html">Country Analysis</a></li>
 </ul>
+</section>
+<section id="global-life-expectancy-map" class="level2">
+<h2 class="anchored" data-anchor-id="global-life-expectancy-map"><strong>Global Life Expectancy Map</strong></h2>
+<p>This interactive map visualizes how life expectancy changes over time across different countries.</p>
+<p>import pandas as pd import plotly.express as px</p>
+<p>df = pd.read_csv(“gapminder.csv”)</p>
+</section>
+</section>
+<section id="create-an-interactive-choropleth-map" class="level1">
+<h1>Create an interactive choropleth map</h1>
+<p>fig = px.choropleth(df, locations=“country”, locationmode=“country names”, color=“life_expectancy”, hover_name=“country”, animation_frame=“year”, color_continuous_scale=“Viridis”, title=“Global Life Expectancy Over Time”)</p>
+<p>fig.show()</p>
 
 
 </section>

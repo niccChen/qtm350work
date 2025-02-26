@@ -17,4 +17,5 @@ website:
 
 format:
   html:
-    theme: simplex  
+    theme: simplex
+    css: styles.css  
