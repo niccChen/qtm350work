@@ -16,7 +16,6 @@ The website should be published on GitHub Pages and the link to the website shou
 
 The dataset is available in this repository as `gapminder.csv`, and it contains 6 columns and 1,704 rows. The columns are: `country`, `continent`, `year`, `life_expectancy`, `population_millions`, and `gdp_per_capita`. The dataset contains information about these variables in 142 countries over the years 1952 to 2007, with a 5-year interval. If you would like to create the dataset yourself, you can run the code below.
 
-```python
 # Install packages
 # !pip install pandas gapminder
 
@@ -76,7 +75,7 @@ gapminder_df.to_csv('gapminder.csv', index=False)
 16. Enhance the website's appearance by adding a custom CSS file.
 
 17. Include an interactive map showing countries' life expectancy or GDP per capita. For this task, you can use the `plotly` library in Python, the `leaflet` library in R, or any other library you prefer.
-=======
+
 # QTM 350 - Quiz 03
 
 ## AI-Assisted Programming, Local LLMs, and Cloud Computing
@@ -140,4 +139,3 @@ In this second part, you will use AWS EC2 to perform simple Python data analysis
 14. Submit your repository link on Canvas
 
 **Good luck!** 😃
->>>>>>> quiz03/main
