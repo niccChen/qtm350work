@@ -1,0 +1,21 @@
+---
+title: "Life Expectancy & Population"
+---
+
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv("gapminder.csv")
+
+# Scatter plot
+plt.figure(figsize=(8,5))
+sns.scatterplot(data=df, x="population_millions", y="life_expectancy", hue="year", alpha=0.5)
+plt.xscale("log")
+plt.xlabel("Population (Millions, Log Scale)")
+plt.ylabel("Life Expectancy")
+plt.title("Life Expectancy vs Population Over Time")
+plt.show()
+```

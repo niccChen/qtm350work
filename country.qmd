@@ -1,0 +1,24 @@
+---
+title: "Country Analysis"
+
+---
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("gapminder.csv")
+
+country = "China"  
+
+country_data = df[df["country"] == country]
+
+plt.figure(figsize=(8,5))
+plt.plot(country_data["year"], country_data["life_expectancy"], label="Life Expectancy", marker="o")
+plt.plot(country_data["year"], country_data["gdp_per_capita"], label="GDP per Capita", marker="s")
+plt.plot(country_data["year"], country_data["population_millions"], label="Population (Millions)", marker="^")
+plt.xlabel("Year")
+plt.legend()
+plt.title(f"Trends in {country}")
+plt.show()
+```

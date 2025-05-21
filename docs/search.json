@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gapminder Analysis",
+    "section": "",
+    "text": "The Gapminder dataset provides insights into global development trends, including life expectancy, GDP per capita, and population over time.\n\n\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\n\n\n\nThis interactive map visualizes how life expectancy changes over time across different countries.\n\nimport pandas as pd\nimport plotly.express as px\n\ndf = pd.read_csv(\"gapminder.csv\")\n\n# Create an interactive choropleth map\nfig = px.choropleth(df,\n                     locations=\"country\",\n                     locationmode=\"country names\",\n                     color=\"life_expectancy\",\n                     hover_name=\"country\",\n                     animation_frame=\"year\",\n                     color_continuous_scale=\"Viridis\",\n                     title=\"Global Life Expectancy Over Time\")\n\nfig.show()"
+  },
+  {
+    "objectID": "index.html#explore-the-data",
+    "href": "index.html#explore-the-data",
+    "title": "Gapminder Analysis",
+    "section": "",
+    "text": "Life Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis"
+  },
+  {
+    "objectID": "index.html#global-life-expectancy-map",
+    "href": "index.html#global-life-expectancy-map",
+    "title": "Gapminder Analysis",
+    "section": "",
+    "text": "This interactive map visualizes how life expectancy changes over time across different countries.\n\nimport pandas as pd\nimport plotly.express as px\n\ndf = pd.read_csv(\"gapminder.csv\")\n\n# Create an interactive choropleth map\nfig = px.choropleth(df,\n                     locations=\"country\",\n                     locationmode=\"country names\",\n                     color=\"life_expectancy\",\n                     hover_name=\"country\",\n                     animation_frame=\"year\",\n                     color_continuous_scale=\"Viridis\",\n                     title=\"Global Life Expectancy Over Time\")\n\nfig.show()"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndf = pd.read_csv(\"gapminder.csv\")\n\ncountry = \"China\"  \n\ncountry_data = df[df[\"country\"] == country]\n\nplt.figure(figsize=(8,5))\nplt.plot(country_data[\"year\"], country_data[\"life_expectancy\"], label=\"Life Expectancy\", marker=\"o\")\nplt.plot(country_data[\"year\"], country_data[\"gdp_per_capita\"], label=\"GDP per Capita\", marker=\"s\")\nplt.plot(country_data[\"year\"], country_data[\"population_millions\"], label=\"Population (Millions)\", marker=\"^\")\nplt.xlabel(\"Year\")\nplt.legend()\nplt.title(f\"Trends in {country}\")\nplt.show()"
+  },
+  {
+    "objectID": "qtm350-quiz02.html",
+    "href": "qtm350-quiz02.html",
+    "title": "qtm350-quiz02",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "qtm350-quiz02.html#quarto",
+    "href": "qtm350-quiz02.html#quarto",
+    "title": "qtm350-quiz02",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy & GDP Per Capita",
+    "section": "",
+    "text": "This page explores the relationship between life expectancy and GDP per capita.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load dataset\ndf = pd.read_csv(\"gapminder.csv\")\n\n# Plot\nplt.figure(figsize=(8,5))\nfor year in df.year.unique():\n    subset = df[df.year == year]\n    plt.scatter(subset['gdp_per_capita'], subset['life_expectancy'], label=year, alpha=0.5)\nplt.xscale('log')\nplt.xlabel(\"GDP per Capita (Log Scale)\")\nplt.ylabel(\"Life Expectancy\")\nplt.title(\"Life Expectancy vs GDP per Capita Over Time\")\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy & Population",
+    "section": "",
+    "text": "import seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load dataset\ndf = pd.read_csv(\"gapminder.csv\")\n\n# Scatter plot\nplt.figure(figsize=(8,5))\nsns.scatterplot(data=df, x=\"population_millions\", y=\"life_expectancy\", hue=\"year\", alpha=0.5)\nplt.xscale(\"log\")\nplt.xlabel(\"Population (Millions, Log Scale)\")\nplt.ylabel(\"Life Expectancy\")\nplt.title(\"Life Expectancy vs Population Over Time\")\nplt.show()"
+  }
+]
